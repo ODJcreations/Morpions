@@ -17,8 +17,8 @@ body {
 /* positionne le bouton 'A propos' sur l'ecran */
 .apropos {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 70px;
+    right: -78px;
     padding: 10px;
     background-color: #b9b9b9;
     border: none;
@@ -143,6 +143,7 @@ pre {
     font-style: normal;
 }
 .morpions {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(5, 105px);
     grid-template-rows: 70px 50px 70px repeat(3, 105px) 40px 40px auto;
