@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr" class="langue">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpions</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- fenêtre 'A propos' -->
+    <div id="aPropos">
+        <ion-icon name="close-circle-outline" onclick="fermeAlerte();" class="close"></ion-icon>
+        <p>
+        <pre>by ODJ
+&copy; 2022  ODJcréations/SpiderWeb</pre>
+        </p>
+    </div>
+    <button onclick="apropos();" class="apropos">À propos</button>
+
+    <!-- fenêtre alerte si les 2 joueurs ne sont pas identifiés -->
+    <div id="alerteJoueurs">
+        <ion-icon name="close-circle-outline" onclick="fermeAlerte();" class="close"></ion-icon>
+        <p>- Les joueurs doivent s'identifier<br>- Players must identify themselves</p>
+    </div>
+
+    <div class="nomJoueur">
+        <div class="nomJX">
+            <ion-icon name="person-circle-outline" class="icon"></ion-icon>
+            <input type="text" placeholder="joueurX / playerX" id="joueurx" name="joueurx">
+        </div>
+        <div class="partie">
+            <label class="choixPartie">Historique des Parties</label>
+            <select id="partie">
+                <option value="">--- sélection ---</option>
+            </select>
+        </div>
+        <div class="nomJO">
+            <ion-icon name="person-circle-outline" class="icon"></ion-icon>
+            <input type="text" placeholder="joueurO / playerO" id="joueuro" name="joueuro">
+        </div>
+        <button class="boutonOK" onclick="activeClavier()">OK</button>
+    </div>
+
+    <div class="morpions">
+        <div class="langSelect">
+            <img src="./images/France.png" alt="" id="iconFlag">
+
+            <select name="flags" id="language" onclick="flag()">
+                <option value="fr" selected>français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <h1 class="titre">Morpions</h1>
+
+        <div class="choix">
+            <div class="para">
+                <p for="joueur" id="joueur">Quel joueur commence ?</p>
+            </div>
+            <div class="x">
+                <input type="radio" id="X" name="drone" onclick="joueur('x');">
+                <label for="X">X</label>
+            </div>
+
+            <div class="o">
+                <input type="radio" id="O" name="drone" onclick="joueur('o');">
+                <label for="O">O</label>
+            </div>
+        </div>
+
+        <div class="ecran" id="ecran">Bienvenue</div>
+
+        <div class="touches">
+            <div class="case" id="btn1"></div>
+            <div class="case" id="btn2"></div>
+            <div class="case" id="btn3"></div>
+            <div class="case" id="btn4"></div>
+            <div class="case" id="btn5"></div>
+            <div class="case" id="btn6"></div>
+            <div class="case" id="btn7"></div>
+            <div class="case" id="btn8"></div>
+            <div class="case" id="btn9"></div>
+        </div>
+
+        <div class="afficheScore">
+            <p>scores</p>
+        </div>
+
+        <div class="scores">
+            <div class="joueurX">
+                <label class="labelX"></label>
+            </div>
+            <div>
+                <label class="scoreX">0</label>
+            </div>
+
+            <div class="joueurO">
+                <label class="labelO"></label>
+            </div>
+            <div>
+                <label class="scoreO">0</label>
+            </div>
+        </div>
+
+        <div class="boutons">
+            <div class="bouton">
+                <a href="#" class="jouerEncore" title="Rejouer une partie" onclick="videCases();">Nouvelle partie</a>
+            </div>
+            <div class="bouton">
+                <a href="./index.html" class="reset" id="bouton" title="Reprendre une partie à zéro"
+                    onclick="recharger();">Recommencer</a>
+            </div>
+            <div class="bouton">
+                <a href="#" class="sauve" id="sauve" title="Sauver la partie" onclick="sauverPartie();">Sauver</a>
+            </div>
+
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script src="./app.js"></script>
+</body>
+
+</html>
